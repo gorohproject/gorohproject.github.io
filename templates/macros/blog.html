@@ -6,15 +6,13 @@
     <h2>{{ post.title }}</h2>
   {% endif %}
   <p class="meta">
-    written by
-    {% if post.twitter_handle %}
-      <a href="https://twitter.com/{{ post.twitter_handle
-        }}">{{ post.author or post.twitter_handle }}</a>
-    {% else %}
-      {{ post.author }}
-    {% endif %}
-    on {{ post.pub_date }}
+    {{ post.author }}, {{ post.pub_date }}
   </p>
+  {% for image in post.attachments.images %}
+    <div class="image clearfix">
+      <img style="float: left; margin: 0 10px 10px 0;" src="{{ image.thumbnail(300)|url }}">
+    </div>
+  {% endfor %}
   {{ post.body }}
   </div>
 {% endmacro %}

@@ -1,5 +1,10 @@
 {% macro render_menu_item(item) %}
-  <div class="menu-item">
+  <div class="menu-item clearfix">
+    {% for image in item.attachments.images %}
+      <div class="image">
+        <img style="float: left; margin: 0 10px 10px 0;" src="{{ image.thumbnail(300)|url }}">
+      </div>
+    {% endfor %}
   	{{ item.description }}
   </div>
 {% endmacro %}
