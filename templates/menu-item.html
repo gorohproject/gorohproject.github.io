@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% from "macros/menu.html" import render_menu_item %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}
+  {{ render_menu_item(this) }}
+{% endblock %}

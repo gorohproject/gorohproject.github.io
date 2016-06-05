@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% from "macros/menu.html" import render_menu_item %}
+{% from "macros/pagination.html" import render_pagination %}
+{% block title %}{{ this.title }}{% endblock %}
+{% block body %}
+  {% for child in this.pagination.items %}
+  	<a href="{{ child|url }}">{{ child.title }}</a>
+    {{ render_menu_item(child) }}
+  {% endfor %}
+
+  {{ render_pagination(this.pagination) }}
+{% endblock %}
+ 
