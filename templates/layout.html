@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li{% if this._path == '/' %} class="active"{% endif
-            %}><a href="{{ '/'|url }}">Welcome</a></li>
+            %}><a href="{{ '/'|url }}">Главная страница</a></li>
           {% for href, title in bag('routes').iteritems() %}
             <li{% if this.is_child_of(href) %} class="active"{% endif
               %}><a href="{{ href|url }}">{{ title }}</a></li>
@@ -22,7 +22,6 @@
   <div class="container">
     {% block body %}{% endblock %}
 
-    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=W1g4YzN9PYZ5YTqPyTV7vwr0xQjmfKQW&width=500&height=400&lang=ru_RU&sourceType=constructor&scroll=true"></script>
   </div>
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
