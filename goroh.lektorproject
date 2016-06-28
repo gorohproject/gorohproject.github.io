@@ -1,2 +1,6 @@
 [project]
 name = goroh
+
+[servers.ghpages]
+target = ghpages://gorohproject/gorohproject.github.io
+default = yes
